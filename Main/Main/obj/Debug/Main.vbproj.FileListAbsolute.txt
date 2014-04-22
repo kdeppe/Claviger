@@ -1,0 +1,11 @@
+D:\Code\Claviger\Main\Main\Main\bin\Debug\Main.exe.config
+D:\Code\Claviger\Main\Main\bin\Debug\Main.exe.config
+D:\Code\Claviger\Main\Main\bin\Debug\Main.exe
+D:\Code\Claviger\Main\Main\bin\Debug\Main.pdb
+D:\Code\Claviger\Main\Main\bin\Debug\Main.xml
+D:\Code\Claviger\Main\Main\obj\Debug\Main.Main.resources
+D:\Code\Claviger\Main\Main\obj\Debug\Main.Resources.resources
+D:\Code\Claviger\Main\Main\obj\Debug\Main.vbproj.GenerateResource.Cache
+D:\Code\Claviger\Main\Main\obj\Debug\Main.exe
+D:\Code\Claviger\Main\Main\obj\Debug\Main.xml
+D:\Code\Claviger\Main\Main\obj\Debug\Main.pdb

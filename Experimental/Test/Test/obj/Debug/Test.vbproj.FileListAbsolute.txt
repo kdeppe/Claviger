@@ -1,0 +1,9 @@
+D:\Code\Claviger\Experimental\Test\Test\bin\Debug\Test.exe.config
+D:\Code\Claviger\Experimental\Test\Test\bin\Debug\Test.exe
+D:\Code\Claviger\Experimental\Test\Test\bin\Debug\Test.pdb
+D:\Code\Claviger\Experimental\Test\Test\bin\Debug\Test.xml
+D:\Code\Claviger\Experimental\Test\Test\obj\Debug\Test.Resources.resources
+D:\Code\Claviger\Experimental\Test\Test\obj\Debug\Test.vbproj.GenerateResource.Cache
+D:\Code\Claviger\Experimental\Test\Test\obj\Debug\Test.exe
+D:\Code\Claviger\Experimental\Test\Test\obj\Debug\Test.xml
+D:\Code\Claviger\Experimental\Test\Test\obj\Debug\Test.pdb
