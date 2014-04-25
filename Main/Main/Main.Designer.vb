@@ -41,145 +41,145 @@ Partial Class Main
         Me.btnNewCategory = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'SiteList
+        'tvwSiteList
         '
         Me.tvwSiteList.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.tvwSiteList.HideSelection = False
         Me.tvwSiteList.Location = New System.Drawing.Point(12, 12)
-        Me.tvwSiteList.Name = "SiteList"
+        Me.tvwSiteList.Name = "tvwSiteList"
         Me.tvwSiteList.Size = New System.Drawing.Size(299, 551)
         Me.tvwSiteList.TabIndex = 33
         '
-        'SaveSite
+        'btnSaveSite
         '
         Me.btnSaveSite.Location = New System.Drawing.Point(494, 12)
-        Me.btnSaveSite.Name = "SaveSite"
+        Me.btnSaveSite.Name = "btnSaveSite"
         Me.btnSaveSite.Size = New System.Drawing.Size(105, 22)
         Me.btnSaveSite.TabIndex = 32
         Me.btnSaveSite.Text = "Save Site"
         Me.btnSaveSite.UseVisualStyleBackColor = True
         '
-        'DeleteSite
+        'btnDeleteSite
         '
         Me.btnDeleteSite.Location = New System.Drawing.Point(605, 12)
-        Me.btnDeleteSite.Name = "DeleteSite"
+        Me.btnDeleteSite.Name = "btnDeleteSite"
         Me.btnDeleteSite.Size = New System.Drawing.Size(105, 22)
         Me.btnDeleteSite.TabIndex = 31
         Me.btnDeleteSite.Text = "Delete Site"
         Me.btnDeleteSite.UseVisualStyleBackColor = True
         '
-        'AddSite
+        'btnAddSite
         '
         Me.btnAddSite.Location = New System.Drawing.Point(383, 12)
-        Me.btnAddSite.Name = "AddSite"
+        Me.btnAddSite.Name = "btnAddSite"
         Me.btnAddSite.Size = New System.Drawing.Size(105, 22)
         Me.btnAddSite.TabIndex = 30
         Me.btnAddSite.Text = "Add New Site"
         Me.btnAddSite.UseVisualStyleBackColor = True
         '
-        'Username
+        'tbxUsername
         '
         Me.tbxUsername.Location = New System.Drawing.Point(386, 128)
-        Me.tbxUsername.Name = "Username"
+        Me.tbxUsername.Name = "tbxUsername"
         Me.tbxUsername.Size = New System.Drawing.Size(324, 20)
         Me.tbxUsername.TabIndex = 29
         '
-        'URL
+        'tbxURL
         '
         Me.tbxURL.Location = New System.Drawing.Point(386, 102)
-        Me.tbxURL.Name = "URL"
+        Me.tbxURL.Name = "tbxURL"
         Me.tbxURL.Size = New System.Drawing.Size(324, 20)
         Me.tbxURL.TabIndex = 28
         '
-        'SiteName
+        'tbxSiteName
         '
         Me.tbxSiteName.Location = New System.Drawing.Point(386, 50)
-        Me.tbxSiteName.Name = "SiteName"
+        Me.tbxSiteName.Name = "tbxSiteName"
         Me.tbxSiteName.Size = New System.Drawing.Size(324, 20)
         Me.tbxSiteName.TabIndex = 26
         '
-        'Password
+        'tbxPassword
         '
         Me.tbxPassword.Location = New System.Drawing.Point(386, 154)
-        Me.tbxPassword.Name = "Password"
+        Me.tbxPassword.Name = "tbxPassword"
         Me.tbxPassword.Size = New System.Drawing.Size(324, 20)
         Me.tbxPassword.TabIndex = 25
         '
-        'Notes
+        'rtbNotes
         '
         Me.rtbNotes.Location = New System.Drawing.Point(386, 191)
-        Me.rtbNotes.Name = "Notes"
+        Me.rtbNotes.Name = "rtbNotes"
         Me.rtbNotes.Size = New System.Drawing.Size(321, 190)
         Me.rtbNotes.TabIndex = 24
         Me.rtbNotes.Text = ""
         '
-        'Label6
+        'lblNotes
         '
         Me.lblNotes.AutoSize = True
         Me.lblNotes.Location = New System.Drawing.Point(345, 194)
-        Me.lblNotes.Name = "Label6"
+        Me.lblNotes.Name = "lblNotes"
         Me.lblNotes.Size = New System.Drawing.Size(35, 13)
         Me.lblNotes.TabIndex = 23
         Me.lblNotes.Text = "Notes"
         '
-        'Label5
+        'lblPassword
         '
         Me.lblPassword.AutoSize = True
         Me.lblPassword.Location = New System.Drawing.Point(327, 157)
-        Me.lblPassword.Name = "Label5"
+        Me.lblPassword.Name = "lblPassword"
         Me.lblPassword.Size = New System.Drawing.Size(53, 13)
         Me.lblPassword.TabIndex = 22
         Me.lblPassword.Text = "Password"
         '
-        'Label4
+        'lblUsername
         '
         Me.lblUsername.AutoSize = True
         Me.lblUsername.Location = New System.Drawing.Point(325, 131)
-        Me.lblUsername.Name = "Label4"
+        Me.lblUsername.Name = "lblUsername"
         Me.lblUsername.Size = New System.Drawing.Size(55, 13)
         Me.lblUsername.TabIndex = 21
         Me.lblUsername.Text = "Username"
         '
-        'Label3
+        'lblURL
         '
         Me.lblURL.AutoSize = True
         Me.lblURL.Location = New System.Drawing.Point(351, 105)
-        Me.lblURL.Name = "Label3"
+        Me.lblURL.Name = "lblURL"
         Me.lblURL.Size = New System.Drawing.Size(29, 13)
         Me.lblURL.TabIndex = 20
         Me.lblURL.Text = "URL"
         '
-        'Label2
+        'lblCategory
         '
         Me.lblCategory.AutoSize = True
         Me.lblCategory.Location = New System.Drawing.Point(331, 79)
-        Me.lblCategory.Name = "Label2"
+        Me.lblCategory.Name = "lblCategory"
         Me.lblCategory.Size = New System.Drawing.Size(49, 13)
         Me.lblCategory.TabIndex = 19
         Me.lblCategory.Text = "Category"
         '
-        'Label1
+        'lblSiteName
         '
         Me.lblSiteName.AutoSize = True
         Me.lblSiteName.Location = New System.Drawing.Point(324, 53)
-        Me.lblSiteName.Name = "Label1"
+        Me.lblSiteName.Name = "lblSiteName"
         Me.lblSiteName.Size = New System.Drawing.Size(56, 13)
         Me.lblSiteName.TabIndex = 18
         Me.lblSiteName.Text = "Site Name"
         '
-        'Category
+        'cbxCategory
         '
         Me.cbxCategory.FormattingEnabled = True
         Me.cbxCategory.Location = New System.Drawing.Point(386, 76)
-        Me.cbxCategory.Name = "Category"
+        Me.cbxCategory.Name = "cbxCategory"
         Me.cbxCategory.Size = New System.Drawing.Size(274, 21)
         Me.cbxCategory.TabIndex = 34
         '
-        'Button4
+        'btnNewCategory
         '
         Me.btnNewCategory.Location = New System.Drawing.Point(669, 76)
-        Me.btnNewCategory.Name = "Button4"
+        Me.btnNewCategory.Name = "btnNewCategory"
         Me.btnNewCategory.Size = New System.Drawing.Size(41, 21)
         Me.btnNewCategory.TabIndex = 35
         Me.btnNewCategory.Text = "New"
