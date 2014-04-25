@@ -1,8 +1,0 @@
-D:\Code\Claviger\DBConnect\DBConnect\DBConnect\bin\Debug\DBConnect.dll
-D:\Code\Claviger\DBConnect\DBConnect\DBConnect\bin\Debug\DBConnect.pdb
-D:\Code\Claviger\DBConnect\DBConnect\DBConnect\bin\Debug\DBConnect.xml
-D:\Code\Claviger\DBConnect\DBConnect\DBConnect\obj\Debug\DBConnect.Resources.resources
-D:\Code\Claviger\DBConnect\DBConnect\DBConnect\obj\Debug\DBConnect.vbproj.GenerateResource.Cache
-D:\Code\Claviger\DBConnect\DBConnect\DBConnect\obj\Debug\DBConnect.dll
-D:\Code\Claviger\DBConnect\DBConnect\DBConnect\obj\Debug\DBConnect.xml
-D:\Code\Claviger\DBConnect\DBConnect\DBConnect\obj\Debug\DBConnect.pdb
