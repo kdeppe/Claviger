@@ -6,10 +6,16 @@ Namespace My
 
     Partial Friend Class MyApplication
         Friend cnn As SqlCeConnection
+
+        Private Sub MyApplication_Shutdown(sender As Object, e As EventArgs) Handles Me.Shutdown
+            cnn.Close()
+        End Sub
+
         Private Sub MyApplication_Startup(sender As Object, e As ApplicationServices.StartupEventArgs) Handles Me.Startup
             Dim sgn As New SignIn
             Dim blnInvalid As Boolean = True
             sgn.AcceptButton = sgn.btnOK
+            sgn.CancelButton = sgn.btnCancel
 
             While blnInvalid
                 sgn.Show()
@@ -19,6 +25,11 @@ Namespace My
                     System.Windows.Forms.Application.DoEvents()
                 End While
                 sgn.mblnClick = False
+                If sgn.mblnCancel Then
+                    sgn.Dispose()
+                    e.Cancel = True
+                    Exit Sub
+                End If
                 If Not File.Exists(sgn.tbxUsername.Text & ".sdf") Then
                     MsgBox("Username does not exist.")
                     Continue While
@@ -60,7 +71,6 @@ Namespace My
                                                "password = " & sgn.tbxPassword.Text
                         sgn.tbxPassword.Clear()
                     End If
-                Finally
                     cnn.Close()
                 End Try
             Loop While blnInvalid

@@ -1,4 +1,6 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿Imports System.Data.SqlServerCe
+
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class Main
     Inherits System.Windows.Forms.Form
 
@@ -175,6 +177,15 @@ Partial Class Main
         Me.cbxCategory.Name = "cbxCategory"
         Me.cbxCategory.Size = New System.Drawing.Size(274, 21)
         Me.cbxCategory.TabIndex = 34
+
+        Dim cmd As SqlCeCommand = My.Application.cnn.CreateCommand()
+        cmd.CommandText = "SELECT * FROM tblCategory ORDER BY fstrCategory"
+        Dim rs As SqlCeResultSet = cmd.ExecuteResultSet(ResultSetOptions.Scrollable Or ResultSetOptions.Sensitive)
+
+        Me.cbxCategory.DataSource = rs
+        Me.cbxCategory.DisplayMember = "fstrCategory"
+        Me.cbxCategory.ValueMember = "flngCategoryID"
+
         '
         'btnNewCategory
         '

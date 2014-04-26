@@ -27,6 +27,7 @@ Partial Class SignIn
         Me.btnOK = New System.Windows.Forms.Button()
         Me.tbxPassword = New System.Windows.Forms.TextBox()
         Me.lblPassword = New System.Windows.Forms.Label()
+        Me.btnCancel = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'tbxUsername
@@ -47,7 +48,7 @@ Partial Class SignIn
         '
         'btnOK
         '
-        Me.btnOK.Location = New System.Drawing.Point(91, 73)
+        Me.btnOK.Location = New System.Drawing.Point(51, 73)
         Me.btnOK.Name = "btnOK"
         Me.btnOK.Size = New System.Drawing.Size(72, 21)
         Me.btnOK.TabIndex = 11
@@ -71,11 +72,21 @@ Partial Class SignIn
         Me.lblPassword.TabIndex = 7
         Me.lblPassword.Text = "Password:"
         '
+        'btnCancel
+        '
+        Me.btnCancel.Location = New System.Drawing.Point(134, 73)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(66, 20)
+        Me.btnCancel.TabIndex = 14
+        Me.btnCancel.Text = "Cancel"
+        Me.btnCancel.UseVisualStyleBackColor = True
+        '
         'SignIn
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(253, 109)
+        Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.tbxUsername)
         Me.Controls.Add(Me.lblUsername)
         Me.Controls.Add(Me.btnOK)
@@ -92,4 +103,5 @@ Partial Class SignIn
     Friend WithEvents btnOK As System.Windows.Forms.Button
     Friend WithEvents tbxPassword As System.Windows.Forms.TextBox
     Friend WithEvents lblPassword As System.Windows.Forms.Label
+    Friend WithEvents btnCancel As System.Windows.Forms.Button
 End Class

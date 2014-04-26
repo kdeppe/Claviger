@@ -60,14 +60,11 @@ Module Module1
 
             Dim cmd As SqlCeCommand = cnn.CreateCommand()
 
-            cmd.CommandText = "CREATE TABLE tblPassword (flngPasswordID bigint, flngSiteID bigint, flngCategoryID bigint, fstrUsername ntext, fstrPassword ntext, fstrNote ntext)"
-            Console.WriteLine(cmd.ExecuteNonQuery())
+            cmd.CommandText = "CREATE TABLE tblPassword (flngPasswordID bigint, flngSiteID bigint, flngCategoryID bigint, fstrUsername nvarchar(100), fstrPassword nvarchar(100), fstrNote ntext)"
 
-            cmd.CommandText = "CREATE TABLE tblSite (flngSiteID bigint, fstrName ntext, fstrURL ntext)"
-            Console.WriteLine(cmd.ExecuteNonQuery())
+            cmd.CommandText = "CREATE TABLE tblSite (flngSiteID bigint, fstrName nvarchar(1000), fstrURL nvarchar(1000))"
 
-            cmd.CommandText = "CREATE TABLE tblCategory (flngCategoryID bigint, fstrCategory ntext)"
-            Console.WriteLine(cmd.ExecuteNonQuery())
+            cmd.CommandText = "CREATE TABLE tblCategory (flngCategoryID bigint, fstrCategory nvarchar(100))"
         Catch
         Finally
             cnn.Close()
