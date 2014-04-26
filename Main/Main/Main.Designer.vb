@@ -177,15 +177,6 @@ Partial Class Main
         Me.cbxCategory.Name = "cbxCategory"
         Me.cbxCategory.Size = New System.Drawing.Size(274, 21)
         Me.cbxCategory.TabIndex = 34
-
-        Dim cmd As SqlCeCommand = My.Application.cnn.CreateCommand()
-        cmd.CommandText = "SELECT * FROM tblCategory ORDER BY fstrCategory"
-        Dim rs As SqlCeResultSet = cmd.ExecuteResultSet(ResultSetOptions.Scrollable Or ResultSetOptions.Sensitive)
-
-        Me.cbxCategory.DataSource = rs
-        Me.cbxCategory.DisplayMember = "fstrCategory"
-        Me.cbxCategory.ValueMember = "flngCategoryID"
-
         '
         'btnNewCategory
         '
@@ -242,4 +233,45 @@ Partial Class Main
     Friend WithEvents cbxCategory As System.Windows.Forms.ComboBox
     Friend WithEvents btnNewCategory As System.Windows.Forms.Button
 
+    Public Sub New()
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        Dim cmd As SqlCeCommand = My.Application.cnn.CreateCommand()
+        cmd.CommandText = "SELECT flngCategoryID, fstrCategory FROM tblCategory ORDER BY fstrCategory"
+        Dim rsCategories As SqlCeResultSet = cmd.ExecuteResultSet(ResultSetOptions.Scrollable Or ResultSetOptions.Sensitive)
+
+        Me.cbxCategory.DataSource = rsCategories
+        Me.cbxCategory.DisplayMember = "fstrCategory"
+        Me.cbxCategory.ValueMember = "flngCategoryID"
+
+        PopulateTreeView()
+    End Sub
+
+    Friend Sub PopulateTreeView()
+        Dim cmd As SqlCeCommand = My.Application.cnn.CreateCommand()
+        cmd.CommandText = "SELECT flngCategoryID, fstrCategory FROM tblCategory ORDER BY fstrCategory"
+        Dim rsCategories As SqlCeResultSet = cmd.ExecuteResultSet(ResultSetOptions.Scrollable Or ResultSetOptions.Sensitive)
+
+        cmd.CommandText = "SELECT p.flngCategoryID, s.flngSiteID, s.fstrName FROM tblPassword p INNER JOIN tblSite s ON s.flngSiteID = p.flngSiteID"
+        Dim rsSiteCategories As SqlCeResultSet = cmd.ExecuteResultSet(ResultSetOptions.Scrollable)
+        While rsCategories.Read()
+            Dim strNode As String = rsCategories.GetValue(1)
+            Dim lngCurrentCategoryID As Int32 = rsCategories.GetValue(0)
+            Dim nod As TreeNode
+            nod = Me.tvwSiteList.Nodes.Add(strNode)
+            If rsSiteCategories.ReadFirst() Then
+                Do
+                    Dim lngThisCategoryID As Int32 = Int(rsSiteCategories.GetValue(0))
+                    Dim strThisSite As String = rsSiteCategories.GetValue(2)
+                    If lngCurrentCategoryID = lngThisCategoryID Then
+                        Dim nodChild As TreeNode = nod.Nodes.Add(strThisSite)
+                        nodChild.Tag = Int(rsSiteCategories.GetValue(1))
+                    End If
+                Loop While rsSiteCategories.Read()
+            End If
+        End While
+
+    End Sub
 End Class

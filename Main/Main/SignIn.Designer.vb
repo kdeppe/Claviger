@@ -35,7 +35,7 @@ Partial Class SignIn
         Me.tbxUsername.Location = New System.Drawing.Point(91, 21)
         Me.tbxUsername.Name = "tbxUsername"
         Me.tbxUsername.Size = New System.Drawing.Size(131, 20)
-        Me.tbxUsername.TabIndex = 13
+        Me.tbxUsername.TabIndex = 1
         '
         'lblUsername
         '
@@ -51,7 +51,7 @@ Partial Class SignIn
         Me.btnOK.Location = New System.Drawing.Point(51, 73)
         Me.btnOK.Name = "btnOK"
         Me.btnOK.Size = New System.Drawing.Size(72, 21)
-        Me.btnOK.TabIndex = 11
+        Me.btnOK.TabIndex = 3
         Me.btnOK.Text = "OK"
         Me.btnOK.UseVisualStyleBackColor = True
         '
@@ -61,7 +61,7 @@ Partial Class SignIn
         Me.tbxPassword.Name = "tbxPassword"
         Me.tbxPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.tbxPassword.Size = New System.Drawing.Size(131, 20)
-        Me.tbxPassword.TabIndex = 9
+        Me.tbxPassword.TabIndex = 2
         '
         'lblPassword
         '
@@ -77,7 +77,7 @@ Partial Class SignIn
         Me.btnCancel.Location = New System.Drawing.Point(134, 73)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(66, 20)
-        Me.btnCancel.TabIndex = 14
+        Me.btnCancel.TabIndex = 4
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = True
         '
