@@ -1,8 +1,0 @@
-D:\Code\Claviger\Experimental\Experimental\Experimental\bin\Debug\Experimental.dll
-D:\Code\Claviger\Experimental\Experimental\Experimental\bin\Debug\Experimental.pdb
-D:\Code\Claviger\Experimental\Experimental\Experimental\bin\Debug\Experimental.xml
-D:\Code\Claviger\Experimental\Experimental\Experimental\obj\Debug\Experimental.Resources.resources
-D:\Code\Claviger\Experimental\Experimental\Experimental\obj\Debug\Experimental.vbproj.GenerateResource.Cache
-D:\Code\Claviger\Experimental\Experimental\Experimental\obj\Debug\Experimental.dll
-D:\Code\Claviger\Experimental\Experimental\Experimental\obj\Debug\Experimental.xml
-D:\Code\Claviger\Experimental\Experimental\Experimental\obj\Debug\Experimental.pdb

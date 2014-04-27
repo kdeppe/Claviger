@@ -1,5 +1,6 @@
 ﻿Imports System.Data.SqlServerCe
 Imports System.IO
+Imports System.Windows.Forms
 
 Module Module1
 
@@ -16,7 +17,7 @@ Module Module1
         strUsername = ""
         While blnInvalid
             Prompt.Show()
-            Prompt.Focus()
+            Application.DoEvents()
             Prompt.tbxUsername.Focus()
             While Not Prompt.mblnClick
                 System.Windows.Forms.Application.DoEvents()
