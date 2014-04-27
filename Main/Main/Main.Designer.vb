@@ -254,7 +254,7 @@ Partial Class Main
         cmd.CommandText = "SELECT flngCategoryID, fstrCategory FROM tblCategory ORDER BY fstrCategory"
         Dim rsCategories As SqlCeResultSet = cmd.ExecuteResultSet(ResultSetOptions.Scrollable Or ResultSetOptions.Sensitive)
 
-        cmd.CommandText = "SELECT p.flngCategoryID, s.flngSiteID, s.fstrName FROM tblPassword p INNER JOIN tblSite s ON s.flngSiteID = p.flngSiteID"
+        cmd.CommandText = "SELECT flngCategoryID, fstrSiteName, flngPasswordID FROM tblPassword"
         Dim rsSiteCategories As SqlCeResultSet = cmd.ExecuteResultSet(ResultSetOptions.Scrollable)
         While rsCategories.Read()
             Dim strNode As String = rsCategories.GetValue(1)
@@ -264,10 +264,10 @@ Partial Class Main
             If rsSiteCategories.ReadFirst() Then
                 Do
                     Dim lngThisCategoryID As Int32 = Int(rsSiteCategories.GetValue(0))
-                    Dim strThisSite As String = rsSiteCategories.GetValue(2)
+                    Dim strThisSite As String = rsSiteCategories.GetValue(1)
                     If lngCurrentCategoryID = lngThisCategoryID Then
                         Dim nodChild As TreeNode = nod.Nodes.Add(strThisSite)
-                        nodChild.Tag = Int(rsSiteCategories.GetValue(1))
+                        nodChild.Tag = Int(rsSiteCategories.GetValue(2))
                     End If
                 Loop While rsSiteCategories.Read()
             End If

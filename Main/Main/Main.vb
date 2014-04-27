@@ -6,7 +6,7 @@ Public Class Main
     Private mdtbCategories As DataTable
     Private mdtbPasswords As DataTable
     Private mdtbSites As DataTable
-    Private mcnn
+    Private mlngSiteID As Int32
 #End Region
 
 
@@ -37,4 +37,8 @@ Public Class Main
     End Sub
 
 
+    Private Sub btnAddSite_Click(sender As Object, e As EventArgs) Handles btnAddSite.Click
+        Dim cmd As SqlCeCommand = My.Application.cnn.CreateCommand()
+        cmd.CommandText = "SELECT MAX(flngPasswordID) FROM tblPassword"
+    End Sub
 End Class
