@@ -166,4 +166,14 @@ Public Class Main
             End If
         Next
     End Sub
+
+    Private Sub btnShowHide_Click(sender As Object, e As EventArgs) Handles btnShowHide.Click
+        If tbxPassword.PasswordChar = Nothing Then
+            tbxPassword.PasswordChar = "*"
+            btnShowHide.Text = "Show"
+        Else
+            tbxPassword.PasswordChar = Nothing
+            btnShowHide.Text = "Hide"
+        End If
+    End Sub
 End Class

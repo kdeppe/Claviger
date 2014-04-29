@@ -42,6 +42,7 @@ Partial Class Main
         Me.cbxCategory = New System.Windows.Forms.ComboBox()
         Me.btnNewCategory = New System.Windows.Forms.Button()
         Me.btnDeleteCategory = New System.Windows.Forms.Button()
+        Me.btnShowHide = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'tvwSiteList
@@ -106,7 +107,8 @@ Partial Class Main
         '
         Me.tbxPassword.Location = New System.Drawing.Point(386, 154)
         Me.tbxPassword.Name = "tbxPassword"
-        Me.tbxPassword.Size = New System.Drawing.Size(324, 20)
+        Me.tbxPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.tbxPassword.Size = New System.Drawing.Size(269, 20)
         Me.tbxPassword.TabIndex = 9
         '
         'rtbNotes
@@ -197,11 +199,21 @@ Partial Class Main
         Me.btnDeleteCategory.Text = "Delete"
         Me.btnDeleteCategory.UseVisualStyleBackColor = True
         '
+        'btnShowHide
+        '
+        Me.btnShowHide.Location = New System.Drawing.Point(664, 153)
+        Me.btnShowHide.Name = "btnShowHide"
+        Me.btnShowHide.Size = New System.Drawing.Size(45, 20)
+        Me.btnShowHide.TabIndex = 25
+        Me.btnShowHide.Text = "Show"
+        Me.btnShowHide.UseVisualStyleBackColor = True
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(763, 575)
+        Me.Controls.Add(Me.btnShowHide)
         Me.Controls.Add(Me.btnDeleteCategory)
         Me.Controls.Add(Me.btnNewCategory)
         Me.Controls.Add(Me.cbxCategory)
@@ -331,9 +343,11 @@ Partial Class Main
         For i As Int32 = 0 To nodCategory.Nodes.Count - 1
             If nodCategory.Nodes.Item(i).Tag = plngPasswordID Then
                 nodCategory.Nodes.RemoveAt(i)
+                Exit For
             End If
         Next
 
     End Sub
     Friend WithEvents btnDeleteCategory As System.Windows.Forms.Button
+    Friend WithEvents btnShowHide As System.Windows.Forms.Button
 End Class
