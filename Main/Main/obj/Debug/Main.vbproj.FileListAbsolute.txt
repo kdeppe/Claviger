@@ -21,3 +21,4 @@ D:\Code\Claviger\Main\Main\obj\Debug\Main.exe
 D:\Code\Claviger\Main\Main\obj\Debug\Main.xml
 D:\Code\Claviger\Main\Main\obj\Debug\Main.pdb
 D:\Code\Claviger\Main\Main\obj\Debug\Main.vbprojResolveAssemblyReference.cache
+D:\Code\Claviger\Main\Main\obj\Debug\Main.DeleteCategory.resources

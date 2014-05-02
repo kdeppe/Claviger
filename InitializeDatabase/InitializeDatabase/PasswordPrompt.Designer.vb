@@ -22,6 +22,7 @@ Partial Class PasswordPrompt
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PasswordPrompt))
         Me.lblPassword1 = New System.Windows.Forms.Label()
         Me.lblPassword2 = New System.Windows.Forms.Label()
         Me.tbxPassword1 = New System.Windows.Forms.TextBox()
@@ -74,19 +75,19 @@ Partial Class PasswordPrompt
         Me.btnOK.Text = "OK"
         Me.btnOK.UseVisualStyleBackColor = True
         '
-        'Label1
+        'lblUsername
         '
         Me.lblUsername.AutoSize = True
         Me.lblUsername.Location = New System.Drawing.Point(23, 20)
-        Me.lblUsername.Name = "Label1"
+        Me.lblUsername.Name = "lblUsername"
         Me.lblUsername.Size = New System.Drawing.Size(97, 13)
         Me.lblUsername.TabIndex = 5
         Me.lblUsername.Text = "Choose Username:"
         '
-        'TextBox1
+        'tbxUsername
         '
         Me.tbxUsername.Location = New System.Drawing.Point(141, 17)
-        Me.tbxUsername.Name = "TextBox1"
+        Me.tbxUsername.Name = "tbxUsername"
         Me.tbxUsername.Size = New System.Drawing.Size(131, 20)
         Me.tbxUsername.TabIndex = 6
         '
@@ -102,6 +103,7 @@ Partial Class PasswordPrompt
         Me.Controls.Add(Me.tbxPassword1)
         Me.Controls.Add(Me.lblPassword2)
         Me.Controls.Add(Me.lblPassword1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "PasswordPrompt"
         Me.Text = "Database Setup"
         Me.ResumeLayout(False)

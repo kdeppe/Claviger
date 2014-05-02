@@ -126,12 +126,12 @@ Public Class Main
             If strConfirm = vbYes Then
                 cmd.CommandText = "DELETE FROM tblPassword WHERE flngPasswordID = @plngPasswordID"
                 cmd.ExecuteNonQuery()
+                ClearForm()
+                DeleteFromTree(mlngPasswordID, rs.GetValue(1))
             End If
         Else
             MsgBox("No item selected to delete.")
-        End If
-        ClearForm()
-        DeleteFromTree(mlngPasswordID, rs.GetValue(1))
+        End If 
     End Sub
 
     Private Sub ClearForm()
@@ -143,28 +143,11 @@ Public Class Main
     End Sub
 
     Private Sub btnDeleteCategory_Click(sender As Object, e As EventArgs) Handles btnDeleteCategory.Click
-        Dim lngCategoryID As Int32 = cbxCategory.SelectedValue
-        For i As Int32 = 0 To tvwSiteList.Nodes.Count - 1
-            If tvwSiteList.Nodes.Item(i).Tag = lngCategoryID Then
-                If tvwSiteList.Nodes.Item(i).Nodes.Count <> 0 Then
-                    MsgBox("Sites are using this category. Change or delete them before you delete the category.")
-                    Exit Sub
-                Else
-                    Dim strConfirm As String = MsgBox("Are you sure you want to delete this category?", vbYesNo)
-                    If strConfirm = vbYes Then
-                        tvwSiteList.Nodes.RemoveAt(i)
-                        Dim cmd As SqlCeCommand = My.Application.cnn.CreateCommand()
-                        cmd.CommandText = "DELETE FROM tblCategory WHERE flngCategoryID = @plngCategoryID"
-                        cmd.Parameters.AddWithValue("@plngCategoryID", lngCategoryID)
-                        cmd.ExecuteNonQuery()
-                        cmd.CommandText = "SELECT * FROM tblCategory ORDER BY fstrCategory"
-                        cbxCategory.DataSource = cmd.ExecuteResultSet(ResultSetOptions.Scrollable)
-                        PopulateTreeView()
-                        Exit Sub
-                    End If
-                End If
-            End If
-        Next
+        Dim dc As New DeleteCategory()
+        dc.AcceptButton = dc.btnOK
+        dc.CancelButton = dc.btnCancel
+        dc.PopulateList()
+        dc.Show()
     End Sub
 
     Private Sub btnShowHide_Click(sender As Object, e As EventArgs) Handles btnShowHide.Click

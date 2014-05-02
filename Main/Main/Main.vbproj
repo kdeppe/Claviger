@@ -61,6 +61,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon32.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -90,6 +93,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClavigerEvents.vb" />
+    <Compile Include="DeleteCategory.Designer.vb">
+      <DependentUpon>DeleteCategory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteCategory.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SignIn.Designer.vb">
       <DependentUpon>SignIn.vb</DependentUpon>
     </Compile>
@@ -120,6 +129,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DeleteCategory.resx">
+      <DependentUpon>DeleteCategory.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SignIn.resx">
       <DependentUpon>SignIn.vb</DependentUpon>
     </EmbeddedResource>
@@ -156,6 +168,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icon32.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -22,6 +22,7 @@ Partial Class SignIn
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SignIn))
         Me.tbxUsername = New System.Windows.Forms.TextBox()
         Me.lblUsername = New System.Windows.Forms.Label()
         Me.btnOK = New System.Windows.Forms.Button()
@@ -74,9 +75,9 @@ Partial Class SignIn
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(134, 73)
+        Me.btnCancel.Location = New System.Drawing.Point(129, 73)
         Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(66, 20)
+        Me.btnCancel.Size = New System.Drawing.Size(72, 21)
         Me.btnCancel.TabIndex = 4
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = True
@@ -85,13 +86,14 @@ Partial Class SignIn
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(253, 109)
+        Me.ClientSize = New System.Drawing.Size(253, 107)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.tbxUsername)
         Me.Controls.Add(Me.lblUsername)
         Me.Controls.Add(Me.btnOK)
         Me.Controls.Add(Me.tbxPassword)
         Me.Controls.Add(Me.lblPassword)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "SignIn"
         Me.Text = "Sign In"
         Me.ResumeLayout(False)

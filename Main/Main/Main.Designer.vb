@@ -24,6 +24,7 @@ Partial Class Main
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
         Me.tvwSiteList = New System.Windows.Forms.TreeView()
         Me.btnSaveSite = New System.Windows.Forms.Button()
         Me.btnDeleteSite = New System.Windows.Forms.Button()
@@ -232,6 +233,7 @@ Partial Class Main
         Me.Controls.Add(Me.lblURL)
         Me.Controls.Add(Me.lblCategory)
         Me.Controls.Add(Me.lblSiteName)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Main"
         Me.Text = "Claviger"
         Me.ResumeLayout(False)
