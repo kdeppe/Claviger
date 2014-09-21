@@ -275,6 +275,9 @@ Partial Class Main
     End Sub
 
     Friend Sub PopulateTreeView()
+        Dim lstTreeStatus As New List(Of Int32)
+        StoreTreeStatus(lstTreeStatus)
+
         tvwSiteList.Nodes.Clear()
         Dim cmd As SqlCeCommand = My.Application.cnn.CreateCommand()
         cmd.CommandText = "SELECT flngCategoryID, fstrCategory FROM tblCategory ORDER BY fstrCategory"
@@ -299,6 +302,10 @@ Partial Class Main
                 Loop While rsSiteCategories.Read()
             End If
         End While
+
+        RestoreTreeStatus(lstTreeStatus)
+        tvwSiteList.Refresh()
+        Application.DoEvents()
     End Sub
 
     Friend Sub InsertIntoTree(plngPasswordID As Int32)
@@ -324,6 +331,8 @@ Partial Class Main
         Next
         For i As Int32 = 0 To nodCategory.Nodes.Count - 1
             If nodCategory.Nodes.Item(i).Tag = plngPasswordID Then
+                tvwSiteList.Refresh()
+                Application.DoEvents()
                 Exit Sub
             End If
         Next
@@ -331,6 +340,8 @@ Partial Class Main
             Dim nod As TreeNode = nodCategory.Nodes.Add(strSiteName)
             nod.Tag = plngPasswordID
         End If
+
+        PopulateTreeView()
     End Sub
 
     Friend Sub DeleteFromTree(plngPasswordID As Int32, plngCategoryID As Int32)
@@ -349,7 +360,25 @@ Partial Class Main
             End If
         Next
 
+        PopulateTreeView()
     End Sub
+
+    Private Sub StoreTreeStatus(ByRef plstCategories As List(Of Int32))
+        For Each nod As TreeNode In tvwSiteList.Nodes
+            If nod.IsExpanded Then
+                plstCategories.Add(nod.Tag)
+            End If
+        Next
+    End Sub
+
+    Private Sub RestoreTreeStatus(ByVal plstCategories As List(Of Int32))
+        For Each nod As TreeNode In tvwSiteList.Nodes
+            If plstCategories.Contains(nod.Tag) Then
+                nod.Expand()
+            End If
+        Next
+    End Sub
+
     Friend WithEvents btnDeleteCategory As System.Windows.Forms.Button
     Friend WithEvents btnShowHide As System.Windows.Forms.Button
 End Class

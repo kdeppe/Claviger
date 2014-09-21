@@ -64,6 +64,7 @@ Partial Class DeleteCategory
         Me.Controls.Add(Me.lbxCategories)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "DeleteCategory"
+        Me.Text = "Delete Category"
         Me.ResumeLayout(False)
 
     End Sub

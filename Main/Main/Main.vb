@@ -88,10 +88,13 @@ Public Class Main
         cmd.Parameters.AddWithValue("@pstrNote", rtbNotes.Text)
 
         cmd.ExecuteNonQuery()
+
+        Dim lngPasswordID As Int32 = mlngPasswordID
+
         If lngLastCategoryID <> 0 AndAlso lngLastCategoryID <> cbxCategory.SelectedValue Then
-            DeleteFromTree(mlngPasswordID, lngLastCategoryID)
+            DeleteFromTree(lngPasswordID, lngLastCategoryID)
         End If
-        InsertIntoTree(mlngPasswordID)
+        InsertIntoTree(lngPasswordID)
     End Sub
 
     Private Sub tvwSiteList_AfterSelect(sender As Object, e As TreeViewEventArgs) Handles tvwSiteList.AfterSelect
@@ -128,6 +131,8 @@ Public Class Main
                 cmd.ExecuteNonQuery()
                 ClearForm()
                 DeleteFromTree(mlngPasswordID, rs.GetValue(1))
+                tvwSiteList.Refresh()
+                Application.DoEvents()
             End If
         Else
             MsgBox("No item selected to delete.")
